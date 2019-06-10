@@ -1,10 +1,22 @@
-var express = require ('express');
-var app = express();
-
-app.get ('/', function (req,res) {
-	res.send('to-do-list version 0.0.2');
-});
-
-app.listen(3000,function () {
-	console.log('Listening on port 3000!');
+const http = require("http");
+const fs = require("fs");
+  
+http.createServer(function(request, response){
+      
+    console.log(`«апрошенный адрес: ${request.url}`);
+    // получаем путь после слеша
+    const filePath = request.url.substr(1);
+    fs.readFile(filePath, function(error, data){
+              
+        if(error){
+                  
+            response.statusCode = 404;
+            response.end("Resourse not found!");
+        }   
+        else{
+            response.end(data);
+        }
+    });
+}).listen(3000, function(){
+    console.log("Server started at 3000");
 });
