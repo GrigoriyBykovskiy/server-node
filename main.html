@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>tdl|gate</title>
+	</head>
+	<body>
+		<form method="post" >
+            <fieldset>
+			<p align="center">to-do-list v 0.0.0</p>
+                <legend>Authorization</legend>
+                <div align="center">
+                <p><input id="login" name="login" type="text" placeholder="username" maxlength="10" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{3,}$" required></p>
+                    </div>
+                <div align="center">
+                <p><input id="password" name="password" type="password" placeholder="password" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{4,}$" required></p>
+                    </div>
+                <div align="center">
+                    <p><button type="submit">login</button></p>
+                </div>
+                <div align="center">
+                    <p><button id="register" name="add_user_text" >register</button></p>
+                </div>
+            </fieldset>
+        </form>
+	</body>
+</html>
